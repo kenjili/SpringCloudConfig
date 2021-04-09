@@ -1,7 +1,7 @@
 server:
   port: 3377
 config:
-  info: 1111
+  info: 1122
 spring:
   application:
     name: config-client
