@@ -1,0 +1,31 @@
+server:
+  port: 3377
+config:
+  info: 1111
+spring:
+  application:
+    name: config-client
+  cloud:
+    #SpringConfig客户端配置
+    config:
+      uri: http://localhost:3355 #SpringConfig配置中心地址
+      label: main #GitHub仓库分支名称
+      name: application #配置文件名称
+      #profile: dev #配置文件后缀名，即选择开发环境配置。main分支上的application-dev.yml文件
+  rabbitmq:   #rabbitmq相关配置，15672是web管理端口，5672是mq访问端口
+    host: loaclhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://euraka.server7002:7002/eureka/
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
